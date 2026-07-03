@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primeira: #a51211;
+    --segunda: #ffb800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Monda", sans-serif;
+    background: var(--primeira);
+    color: var(--segunda);
+    line-height: 1.5;
+}
+
+#home {
+    min-height: 70px;
+    background: var(--segunda);
+    color: var(--primeira);
+    text-align: center;
+    border-bottom-left-radius: 50% 25px;
+    border-bottom-right-radius: 50% 25px;
+    border-bottom: 15px solid #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: var(--primeira);
+}
+
+.menu a {
+    color: var(--segunda);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.cardapio {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.cardapio h1 {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: var(--segunda);
+    color: var(--primeira);
+    border-radius: 8px;
+}
+
+.cardapio p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #fff;
+}
+
+.info {
+    flex: 1;
+}
+
+.info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info p {
+    text-align: left;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.geral {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--segunda);
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+.menu div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+
+    .item {
+        width: 100%;
+    }
+
+    .info h2 {
+        font-size: 1.1rem;
+    }
+
+    .preco {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #home {
+        border-bottom-width: 10px;
+    }
+
+    .cardapio {
+        padding: 15px;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .preco {
+        align-self: flex-end;
+        font-size: 1.1rem;
+    }
+
+    .info h2 {
+        font-size: 1rem;
+    }
+
+    .info p {
+        font-size: .9rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+    }
+
+    .menu.ativo {
+        display: block;
+    }
+
+    .menu div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--primeira);
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,.2);
+    }
+}
