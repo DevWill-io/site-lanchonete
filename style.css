@@ -33,6 +33,11 @@ body {
     padding: 10px;
 }
 
+#home h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -50,8 +55,10 @@ body {
     transition: .3s;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.ativo {
     color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .cardapio {
@@ -92,16 +99,20 @@ body {
 .info h2 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    color: var(--segunda);
 }
 
 .info p {
     text-align: left;
+    color: #f0e8e0;
+    margin-bottom: 0;
 }
 
 .preco {
     font-size: 1.2rem;
     font-weight: bold;
     white-space: nowrap;
+    color: #fff;
 }
 
 .geral {
@@ -112,6 +123,82 @@ body {
     padding: 20px;
 }
 
+/* --- Informações extras (rodapé) --- */
+.info-extra {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid var(--segunda);
+}
+
+.info-extra h2 {
+    color: var(--segunda);
+    margin: 15px 0 5px;
+    font-size: 1.1rem;
+}
+
+.info-extra p {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.info-extra .obs {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* --- Página de locais --- */
+.locais-page .unidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.unidade {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--segunda);
+    transition: transform 0.3s;
+}
+
+.unidade:hover {
+    transform: scale(1.02);
+}
+
+.unidade img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid var(--segunda);
+}
+
+.unidade h2 {
+    color: var(--segunda);
+    margin: 10px 0 5px;
+}
+
+.unidade p {
+    color: #f0e8e0;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.unidade .destaque {
+    color: var(--segunda);
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* --- Responsividade --- */
 .menu-toggle {
     display: none;
     background: none;
@@ -129,7 +216,6 @@ body {
 }
 
 @media (max-width: 900px) {
-
     .item {
         width: 100%;
     }
@@ -141,13 +227,19 @@ body {
     .preco {
         font-size: 1rem;
     }
+
+    .unidades-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-
 @media (max-width: 600px) {
-
     #home {
         border-bottom-width: 10px;
+    }
+
+    #home h1 {
+        font-size: 1.5rem;
     }
 
     .cardapio {
@@ -197,6 +289,10 @@ body {
         width: 100%;
         padding: 15px;
         text-align: center;
-        border-top: 1px solid rgba(255,255,255,.2);
+        border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .unidades-grid {
+        grid-template-columns: 1fr;
     }
 }
